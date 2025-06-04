@@ -1,0 +1,485 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #ffd700;
+    --background-color: #1a1a1a;
+    --success-color: #2ecc71;
+    --text-color: #ffffff;
+    --box-bg-color: #ffffe0;
+    --red-color: #ff0000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.file-name {
+    font-weight: bold;
+    color: var(--red-color);
+}
+
+.file-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1rem;
+    align-items: start;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    margin-bottom: 0.5rem;
+}
+
+.file-grid .file-name {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+}
+
+.checkbox-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    background-color: #333;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.checkbox-label {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.add-file-btn {
+    background-color: var(--red-color);
+    padding: 0.8rem 1.5rem;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.admin-btn {
+    background-color: var(--red-color);
+    color: var(--text-color);
+    margin-right: 1rem;
+}
+
+.filepath-input, .description-textarea {
+    background-color: var(--box-bg-color);
+    color: #000000;
+}
+
+.percentage {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+/* Login Page Styles */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 2rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+}
+
+.login-form input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Main Page Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+}
+
+.file-list {
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stats-panel {
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: var(--background-color);
+    border-radius: 4px;
+}
+
+.plus-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.plus-button:hover {
+    transform: scale(1.1);
+}
+
+.file-item {
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.file-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.file-name {
+    flex: 1;
+}
+
+.file-details {
+    display: none;
+    padding: 1rem;
+    background-color: #333;
+    border-top: 1px solid #444;
+}
+
+.file-details.expanded {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.details-group {
+    margin-bottom: 1rem;
+}
+
+.details-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.filepath-input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.description-textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.checkbox-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.checkbox-wrapper {
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    background: var(--box-bg-color);
+    color: black;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    display: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.checkbox-wrapper:hover .tooltip {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+/* Request Modal Styles */
+.request-btn {
+    background-color: var(--secondary-color);
+    color: #000000;
+    margin-right: 1rem;
+}
+
+.request-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2a2a2a;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+    width: 80%;
+    max-width: 600px;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 999;
+}
+
+.request-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.request-form input,
+.request-form select,
+.request-form textarea {
+    background-color: var(--box-bg-color);
+    color: #000000;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+}
+
+.request-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Requests Page Styles */
+.requests-container {
+    background: #2a2a2a;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.request-card {
+    background: #333;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.request-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.request-date {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.request-filename {
+    color: var(--red-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.request-type {
+    color: var(--secondary-color);
+    margin: 0.5rem 0;
+}
+
+.request-description {
+    color: var(--text-color);
+    background: #2a2a2a;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+.nav-btn {
+    background-color: var(--secondary-color);
+    color: black;
+}
+
+/* Form input styles */
+input[type="text"],
+textarea,
+select {
+    background-color: var(--box-bg-color);
+    color: #000000;
+    border: 1px solid #666;
+    padding: 0.8rem;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.add-file-form {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+#add-file-form:not(.hidden) {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background: #333;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+/* Make buttons more visible */
+.add-file-btn {
+    background-color: var(--red-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.add-file-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Update expanded details styling */
+.file-details.expanded {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.details-group label {
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.delete-btn {
+    background-color: var(--red-color);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}
+
+.file-name-section {
+    display: flex;
+    align-items: center;
+}
+
+.request-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+}

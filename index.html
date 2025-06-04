@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refactoring Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>    <div class="container">        <header>
+            <h1>Refactoring Tracker</h1>
+            <div class="header-buttons">
+                <button id="request-btn" class="request-btn">Make Request</button>
+                <button id="view-requests-btn" onclick="window.location.href='requests.html'" class="admin-btn" style="display: none;">View Requests</button>
+                <button id="login-btn" onclick="redirectToLogin()" style="display: block;">Login</button>
+                <button id="logout-btn" onclick="logout()" style="display: none;">Logout</button>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <div class="file-list">                <div id="add-file-section">
+                    <button id="add-file-btn" class="add-file-btn">Add File</button>
+                    <form id="add-file-form" class="hidden add-file-form" onsubmit="event.preventDefault(); addFile();">
+                        <input type="text" id="new-file-name" placeholder="Enter file name" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <div id="files-container">
+                    <!-- Files will be added here dynamically -->
+                </div>
+            </div>            <div class="stats-panel">
+                <h2>Statistics</h2>
+                <div class="stat-item">
+                    <label>Total Files:</label>
+                    <span id="total-files">0</span>
+                </div>
+                <div class="stat-item">
+                    <label>Refactored:</label>
+                    <span id="refactored-files">0</span>
+                    <span class="percentage" id="refactored-percentage">(0%)</span>
+                </div>
+                <div class="stat-item">
+                    <label>With Tests:</label>
+                    <span id="tested-files">0</span>
+                    <span class="percentage" id="tested-percentage">(0%)</span>
+                </div>
+            </div>
+
+            <!-- Request Modal -->
+            <div class="modal-overlay" id="modal-overlay"></div>
+            <div class="request-modal" id="request-modal">
+                <h2>Make a Request</h2>
+                <form class="request-form" id="request-form">
+                    <input type="text" placeholder="File Name" id="request-filename" required>
+                    <select id="request-type" required>
+                        <option value="">Select Request Type</option>
+                        <option value="refactor">Refactor</option>
+                        <option value="tests">Create Tests</option>
+                        <option value="both">Both</option>
+                    </select>
+                    <textarea placeholder="Describe the changes needed..." id="request-description" required></textarea>
+                    <div class="modal-buttons">
+                        <button type="button" onclick="closeRequestModal()">Cancel</button>
+                        <button type="submit">Submit Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/tracker.js"></script>
+</body>
+</html>
