@@ -423,6 +423,7 @@ select {
     padding: 1rem;
     border-radius: 4px;
     margin-top: 1rem;
+    position: sticky;
 }
 
 /* Make buttons more visible */
@@ -435,6 +436,7 @@ select {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.2s;
+    position: sticky;
 }
 
 .add-file-btn:hover {
